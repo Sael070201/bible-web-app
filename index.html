@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A peaceful place to read the Bible and save your favorite verses.">
+  <title>Bible | Read & Reflect</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="header"><div class="wrap brand"><span class="logo" aria-hidden="true">✦</span><div><h1>Bible</h1><p>A little stillness. A little scripture.</p></div><span class="edition">World English Bible</span></div></header>
+  <main class="wrap">
+    <section class="intro"><p class="eyebrow">READ • REFLECT • REMEMBER</p><h2>Make room for the Word.</h2><p>Find a passage, take your time, and keep the verses that speak to you.</p></section>
+    <div class="layout"><div>
+      <section class="card controls" aria-label="Find a Bible passage">
+        <form id="chapter-form" class="chapter-form"><div><label for="book">Book</label><select id="book"></select></div><div><label for="chapter">Chapter</label><select id="chapter"></select></div><button type="submit">Read chapter</button></form>
+        <form id="search-form"><label for="search">Search by Bible reference</label><div class="search-row"><input id="search" placeholder="e.g. John 3:16 or Psalm 23" required maxlength="120"><button type="submit">Search</button></div><small>Enter a book, chapter, or verse range, such as Romans 8:28–30. Keyword search is not supported.</small></form>
+      </section>
+      <section class="card reader" aria-labelledby="passage-title">
+        <div class="reader-top"><div><p class="eyebrow">YOUR READING</p><h2 id="passage-title">Welcome</h2></div><div class="size-tools" aria-label="Reading text size"><button id="smaller" class="outline" aria-label="Decrease text size">A−</button><button id="larger" class="outline" aria-label="Increase text size">A+</button></div></div>
+        <p id="message" role="status" aria-live="polite"></p><button id="retry" class="outline" hidden>Try again</button>
+        <div id="verses" aria-busy="false"></div>
+        <nav class="chapter-nav" aria-label="Chapter navigation"><button id="previous" class="outline" disabled>← Previous chapter</button><button id="next" class="outline" disabled>Next chapter →</button></nav>
+      </section>
+    </div><aside class="card bookmarks"><p class="eyebrow">KEEP CLOSE</p><h2>Your bookmarks</h2><p class="hint">Tap Save beside a verse to keep it here.</p><p id="storage-message" role="status"></p><ul id="bookmark-list"></ul><small>Saved on this browser and device. Clearing browser data removes bookmarks.</small></aside></div>
+    <footer>Read at your own pace. Passages from <a href="https://bible-api.com" target="_blank" rel="noopener noreferrer">bible-api.com</a> · Internet required for new passages.</footer>
+  </main>
+</body>
+</html>
